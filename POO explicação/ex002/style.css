@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .classe {
+    border: 2px solid #333;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .heranca {
+    border-top: 5px solid #007bff;
+  }
+
+  .polimorfismo {
+    border-top: 5px solid #28a745;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  #resultado {
+    font-size: 18px; 
+    font-weight: bold
+  }

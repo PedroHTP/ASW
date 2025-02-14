@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POO com HTML, CSS e JavaScript</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <h1>Fundamentos da Orientação a Objetos</h1>
+
+    <div class="container">
+      <!-- Classe Base -->
+      <div class="classe">
+        <h2>Animal</h2>
+        <p><strong>Atributos:</strong> nome</p>
+        <p><strong>Métodos:</strong> fazerSom(), mover()</p>
+        <button onclick="mostrarSom('animal')">Fazer Som</button>
+        <button onclick="mostrarMovimento('animal')">Mover</button>
+      </div>
+
+      <!-- Classes Filhas (Herança) -->
+      <div class="classe heranca">
+        <h2>Cachorro</h2>
+        
+        <p><strong>Métodos sobrescritos:</strong> fazerSom(), mover()</p>
+        
+        Nome: <select name="listdogs" id="listdogs">
+            <option value="Max">Max</option>
+            <option value="Tiberius">Tiberius</option>
+            <option value="Picard">Picard</option>
+        </select>
+            <div>
+                <button onclick="mostrarSom('cachorro')">Fazer Som</button>
+                <button onclick="mostrarMovimento('cachorro')">Mover</button>
+            </div>
+      </div>
+
+      <div class="classe heranca">
+        <h2>Gato</h2>
+        
+        <p><strong>Métodos sobrescritos:</strong> fazerSom(), mover()</p>
+        
+        Nome: <select name="listcats" id="listcats">
+          <option value="Uhura">Uhura</option>
+          <option value="Rebeca">Rebeca</option>
+          <option value="Joana">Joana</option>
+      </select>
+          <div>
+              <button onclick="mostrarSom('gato')">Fazer Som</button>
+              <button onclick="mostrarMovimento('gato')">Mover</button>
+          </div>
+      </div>
+
+      <div class="classe heranca polimorfismo">
+        <h2>Pássaro</h2>
+        
+        <p><strong>Métodos sobrescritos:</strong> fazerSom(), mover()</p>
+        
+        Nome: <select name="listbirds" id="listbirds">
+          <option value="Bones">Bones</option>
+          <option value="Cassandra">Cassandra</option>
+          <option value="Roberta">Roberta</option>
+      </select>
+          <div>
+              <button onclick="mostrarSom('pássaro')">Fazer Som</button>
+              <button onclick="mostrarMovimento('pássaro')">Mover</button>
+          </div>
+      </div>
+    </div>
+
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
+
+    <script src="./javascript/animais.js"></script>
+  </body>
+</html>

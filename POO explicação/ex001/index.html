@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundamentos da POO</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+background-color: #f4f4f4;
+padding: 20px;
+}
+.classe {
+border: 2px solid #333;
+background-color: #fff;
+border-radius: 10px;
+padding: 20px;
+margin: 20px auto;
+width: 250px;
+text-align: center;
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.heranca {
+border-top: 5px solid #007BFF;
+}
+.polimorfismo {
+border-top: 5px solid #28A745;
+}
+</style>
+</head>
+<body>
+
+<h1>Fundamentos da Orientação a Objetos</h1>
+
+<!-- Classe Base -->
+<div class="classe">
+<h2>Animal</h2>
+<p><strong>Atributos:</strong> nome</p>
+<p><strong>Métodos:</strong> fazerSom()</p>
+</div>
+
+<!-- Classes Filhas (Herança) -->
+<div class="classe heranca">
+<h2>Cachorro</h2>
+<p><strong>Herda de:</strong> Animal</p>
+<p><strong>Métodos sobrescritos:</strong> fazerSom() → "Au Au!"</p>
+</div>
+
+<div class="classe heranca">
+<h2>Gato</h2>
+<p><strong>Herda de:</strong> Animal</p>
+<p><strong>Métodos sobrescritos:</strong> fazerSom() → "Miau!"</p>
+</div>
+
+<div class="classe heranca polimorfismo">
+<h2>Pássaro</h2>
+<p><strong>Herda de:</strong> Animal</p>
+<p><strong>Métodos sobrescritos:</strong> fazerSom() → "Piu Piu!"</p>
+</div>
+
+</body>
+</html>
