@@ -31,15 +31,55 @@ class Animal {
         break;
 
       case "cachorro":
-        frase += ` late: Au! Au!`;
+        switch (this.nome) {
+          case "Max":
+              frase += ` late: au! au!`;
+            break;
+
+          case "Tiberius":
+              frase += ` late: woof! woof!`;
+            break;
+          case "Picard":
+              frase += ` late: vau! vau!`;
+            break;
+          default:
+            break;
+        }
+
         break;
 
       case "gato":
-        frase += ` mia: Miau!`;
+        switch (this.nome) {
+          case "Uhura":
+              frase += ` mia: Mrrrrow! Mrrrrow!`;
+            break;
+
+          case "Rebeca":
+              frase += ` mia: meeaOOOW! meeaOOOW!`;
+            break;
+          case "Joana":
+              frase += ` mia: raaaAAAAH! raaaAAAAH!`;
+            break;
+          default:
+            break;
+        }
         break;
 
       case "pássaro":
-        frase += ` canta: Piu Piu!`;
+        switch (this.nome) {
+          case "Bones":
+              frase += ` canta: nrrrrow! mrrrrow!`;
+            break;
+
+          case "Cassandra":
+              frase += ` canta: fi! fi!`;
+            break;
+          case "Roberta":
+              frase += ` canta: piu! piu! piu!`;
+            break;
+          default:
+            break;
+        }
         break;
 
       default:
@@ -56,15 +96,54 @@ class Animal {
         break;
 
       case "cachorro":
-        frase += ` está correndo!`;
+        switch (this.nome) {
+          case "Max":
+              frase += ` está correndo atrás do rabo!`;
+            break;
+
+          case "Tiberius":
+              frase += ` está correndo ao redor da casa!`;
+            break;
+          case "Picard":
+              frase += ` está correndo para brincar`;
+            break;
+          default:
+            break;
+        }
         break;
 
       case "gato":
-        frase += ` está saltando!`;
+        switch (this.nome) {
+          case "Uhura":
+              frase += ` está saltando em cima do sofá!`;
+            break;
+
+          case "Rebeca":
+              frase += ` está saltando pelo muro!`;
+            break;
+          case "Joana":
+              frase += ` está saltando na cama!`;
+            break;
+          default:
+            break;
+        }
         break;
 
       case "pássaro":
-        frase += ` está voando!`;
+        switch (this.nome) {
+          case "Bones":
+              frase += ` está voando para o norte!`;
+            break;
+
+          case "Cassandra":
+              frase += ` está voando ao redor da casa!`;
+            break;
+          case "Roberta":
+              frase += ` está voando para o ponto mais alto da casa!`;
+            break;
+          default:
+            break;
+        }
         break;
 
       default:

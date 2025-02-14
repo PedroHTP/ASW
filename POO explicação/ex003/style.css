@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: rgb(117, 117, 117);
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    background-color: rgb(187, 25, 25);
+    height: auto;
+}
+
+.container_left {
+    display: flex;
+    width: 60%;
+}
+
+.form {
+    background-color: aliceblue;
+    width: fit-content;
+    padding: 2%;
+    margin: 10px;
+    border-radius: 30px;
+    display: block;
+
+    h1 {
+        margin-top: 0;
+    }
+    .submit {
+        display: flex;
+        width: 100%;
+        margin-top: 5%;
+        justify-content: right;
+    }
+}
+
+aside {
+    width: 40%;
+}
