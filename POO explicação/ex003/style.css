@@ -3,29 +3,34 @@ body {
 }
 
 header {
-    background-color: rgb(117, 117, 117);
+    background-color: rgb(76, 76, 76);
     display: flex;
     justify-content: center;
 }
 
 main {
     display: flex;
-    background-color: rgb(187, 25, 25);
-    height: auto;
+    background-color: rgb(127, 127, 127);
+    height: 630px;
 }
 
 .container_left {
     display: flex;
+    justify-content: center;
     width: 60%;
 }
 
 .form {
-    background-color: aliceblue;
-    width: fit-content;
-    padding: 2%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(52, 52, 52);
+    color: rgb(224, 224, 224);
+    width: 50%;
+    height: fit-content;
+    padding: 3%;
     margin: 10px;
     border-radius: 30px;
-    display: block;
+    display: flex;
+    flex-direction: column;
 
     h1 {
         margin-top: 0;
@@ -35,9 +40,88 @@ main {
         width: 100%;
         margin-top: 5%;
         justify-content: right;
+        
     }
+
+    .botao {
+        border-radius: 10px;
+        padding: 3%;
+        margin-left: 4%;
+        border: 1px solid goldenrod;
+        color: rgb(255, 255, 255);
+    }
+    
+    #som {
+        background-color: rgb(19, 96, 0);
+    }
+    
+    #som:hover {
+        background-color: green;
+        transform: scale(1.05);
+    }
+
+    #movimento {
+        background-color: rgb(65, 8, 141);
+    }
+    
+    #movimento:hover {
+        background-color: rgb(91, 33, 167);
+        transform: scale(1.05);
+    }
+
+    .input {
+        margin: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+            label {
+                color: goldenrod;
+                font-size: large;
+            }
+
+            #cor {
+                width: 40px;
+                height: 40px;
+                padding: 0;
+                border: 0;
+                background-color: transparent;
+            }
+
+            input, select {
+                margin-top: 1%;
+                width: 45%;
+                padding: 2%;
+                border-radius: 5px;
+            }
+
+            select {
+                width: 40%;
+            }
+    }
+
 }
 
 aside {
     width: 40%;
+
+    section {
+        margin: 2%;
+        border-radius: 15px;
+        background-color: #747474;
+    }
+}
+
+#perfil {
+    display: flex;
+}
+
+#pet-foto {
+    margin: 3%;
+    border-radius: 50%;
+}
+
+#res-misc {
+    font-size: larger;
+    color: rgb(204, 178, 34);
 }

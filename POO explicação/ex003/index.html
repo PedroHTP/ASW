@@ -14,20 +14,48 @@
       <div class="container_left">
         <section class="form">
             <h1>Cadastre seu PET!</h1>
-            <input type="text" name="" id="" placeholder="Nome">
-            <select name="especie" id="">
-                <option value="cachorro">Cachorro</option>
-                <option value="gato">Gato</option>
-                <option value="passaro">Pássaro</option>
-                <option value="tartaruga">Tartaruga</option>
-            </select>
+            <div class="input">
+              <label for="nome">Nome:</label>
+              <input type="text" name="nome" id="nome" placeholder="Nome" oninput="atualizar()">
+            </div>
+            <div class="input">
+              <label for="nascimento">Data de nascimento / adoção: </label>
+              <input type="date" name="nascimento" id="nascimento" placeholder="Data de nascimento/adoção" oninput="atualizar()">
+            </div>
+            <div class="input">
+              <label for="nascimento">Cor do animal: </label>
+              <input type="color" name="nome" id="cor" placeholder="Cor" oninput="atualizar()" value="#747474">
+            </div>
+            <div class="input">
+              <label for="especie">Espécie:</label>
+              <select name="especie" id="especie" oninput="atualizar()">
+                  <option value="cachorro">Cachorro</option>
+                  <option value="gato">Gato</option>
+                  <option value="passaro">Pássaro</option>
+                  <option value="peixe">Peixe</option>
+              </select>
+            </div>
             <div class="submit">
-                <input type="button" value="Cadastrar" id="cadastrar">
+                <button onclick="som()" class="botao" id="som">Fazer som</button>
+                <button onclick="mover()" class="botao" id="movimento">Fazer Movimento</button>
             </div>
         </section>
       </div>
       <aside>
-        <section></section>
+        <section id="section-perfil">
+          <div id="perfil">
+            <img src="./images/Cachorro-filhote.jpg" alt="imagem do pet" id="pet-foto">
+            <div id="info">
+              <p id="res-nome">Nome: <strong>Por favor insira um nome!</strong></p>
+              <p id="res-idade">Idade: não definida.</p>
+              <p id="res-especie">Espécie: Cachorro</p>
+              <p id="res-misc"></p>
+            </div>
+          </div>
+        </section>
+        <section>
+          
+        </section>
       </aside>
     </main>
     <script src="./source/javascript.js"></script>
