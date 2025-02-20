@@ -41,7 +41,6 @@ main {
         width: 100%;
         margin-top: 5%;
         justify-content: right;
-        
     }
 
     .botao {
@@ -50,6 +49,25 @@ main {
         margin-left: 4%;
         border: 1px solid goldenrod;
         color: rgb(255, 255, 255);
+    }
+
+    #voltar {
+        background-color: rgb(98, 2, 2);
+        display: none;
+    }
+    
+    #voltar:hover {
+        background-color: rgb(127, 4, 4);
+        transform: scale(1.05);
+    }
+
+    #continuar {
+        background-color: rgb(87, 98, 2);
+    }
+    
+    #continuar:hover {
+        background-color: rgb(117, 127, 4);
+        transform: scale(1.05);
     }
     
     #som {
@@ -125,4 +143,12 @@ aside {
 #res-misc {
     font-size: larger;
     color: rgb(204, 178, 34);
+}
+
+.input.active, .submit.disabled {
+    display: flex;
+}
+
+.input.disabled, .submit.disabled {
+    display: none;
 }

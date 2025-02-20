@@ -14,19 +14,19 @@
       <div class="container_left">
         <section class="form">
             <h1>Cadastre seu PET!</h1>
-            <div class="input">
+            <div class="input active">
               <label for="nome">Nome:</label>
               <input type="text" name="nome" id="nome" placeholder="Nome" oninput="atualizar()">
             </div>
-            <div class="input">
+            <div class="input disabled">
               <label for="nascimento">Data de nascimento / adoção: </label>
               <input type="date" name="nascimento" id="nascimento" placeholder="Data de nascimento/adoção" oninput="atualizar()">
             </div>
-            <div class="input">
+            <div class="input disabled">
               <label for="nascimento">Cor do animal: </label>
               <input type="color" name="nome" id="cor" placeholder="Cor" oninput="atualizar()" value="#747474">
             </div>
-            <div class="input">
+            <div class="input disabled">
               <label for="especie">Espécie:</label>
               <select name="especie" id="especie" oninput="atualizar()">
                   <option value="cachorro">Cachorro</option>
@@ -35,7 +35,11 @@
                   <option value="peixe">Peixe</option>
               </select>
             </div>
-            <div class="submit">
+            <div id="next">
+              <button type="button" class="botao" id="voltar" onclick="voltar()">Voltar</button>
+              <button type="button" class="botao" id="continuar" onclick="continuar()">Continuar</button>
+            </div>
+            <div class="submit  disabled">
                 <button onclick="som()" class="botao" id="som">Fazer som</button>
                 <button onclick="mover()" class="botao" id="movimento">Fazer Movimento</button>
             </div>
