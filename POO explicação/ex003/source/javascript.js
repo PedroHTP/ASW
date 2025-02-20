@@ -23,9 +23,6 @@ class Animal {
 
     let estagio = this.estagio(idade);
 
-    // res
-    let res = document.getElementById("res-misc");
-
     switch (estagio) {
       case "adulto":
         img.src = "./images/" + this.getEspecie() + "-adulto.jpg";
@@ -122,44 +119,42 @@ class Peixe extends Animal {
 // Define o passo atual (0 = primeiro passo)
 let atual_Step = 0;
 
-// seleciona steps 
-const steps = Array.from(document.querySelectorAll('.form > div:not(#next)'));
+// seleciona steps
+const steps = Array.from(document.querySelectorAll(".form > div:not(#next)"));
 
 function updateSteps() {
-  steps.forEach(
-    (step, index) => {
-      if (index === atual_Step) {
-        step.classList.add('active');
-        step.classList.remove('disabled');
-      } else {
-        step.classList.add('disabled');
-        step.classList.remove('active');
-      }
+  steps.forEach((step, index) => {
+    if (index === atual_Step) {
+      step.classList.add("active");
+      step.classList.remove("disabled");
+    } else {
+      step.classList.add("disabled");
+      step.classList.remove("active");
+    }
   });
 
-  const btnVoltar = document.getElementById('voltar');
-  const btnContinuar = document.getElementById('continuar');
+  const btnVoltar = document.getElementById("voltar");
+  const btnContinuar = document.getElementById("continuar");
 
-  
   if (atual_Step === 0) {
-    btnVoltar.style.display = 'none';
+    btnVoltar.style.display = "none";
   } else {
-    btnVoltar.style.display = 'inline-block';
+    btnVoltar.style.display = "inline-block";
   }
-    
+
   if (atual_Step === steps.length - 1) {
-    btnContinuar.style.display = 'none'
+    btnContinuar.style.display = "none";
   } else {
-    btnContinuar.style.display = 'inline-block'
+    btnContinuar.style.display = "inline-block";
   }
 }
 
 function validarCampos(stepElement) {
   // Seleciona inputs e selects da etapa atual
-  const campos = stepElement.querySelectorAll('input, select');
+  const campos = stepElement.querySelectorAll("input, select");
   let valido = true;
 
-  campos.forEach(campo => {
+  campos.forEach((campo) => {
     // Se o campo estiver vazio ou conter apenas espaços, marca como inválido
     if (!campo.value || campo.value.trim() === "") {
       valido = false;
@@ -173,7 +168,7 @@ function continuar() {
   const etapaAtual = steps[atual_Step];
   // Verifica se os campos da etapa atual foram preenchidos
   if (!validarCampos(etapaAtual)) {
-    alert('Por favor, preencha o campo antes de continuar.');
+    alert("Por favor, preencha o campo antes de continuar.");
     return; // Não avança para o próximo passo
   }
   if (atual_Step < steps.length - 1) {
@@ -190,7 +185,6 @@ function voltar() {
 }
 
 updateSteps();
-
 
 function atualizar() {
   // dados
@@ -241,18 +235,18 @@ function Calcular_idade(ano, mes, dia) {
   if (mes_atual < mes || (mes_atual == mes && dia_atual < dia)) {
     idade -= 1;
   }
+/*
+  if (idade == 0 || idade == -1) {
+    if ((idade == -1)) {
+      idade = mes_atual - mes;
+    }
+    if ((idade == 0)) {
+      idade = (12 - mes) + mes - mes_atual;
+    }
 
-  /* Teste (para o futuro)
-            if (idade == 0 || idade == -1) {
-                if (idade = -1) {
-                    idade = mes_atual - mes
-                } 
-                if (idade = 0) {
-                    idade = (12 - mes) + mes - mes_atual
-                }
-
-                return String(idade + ' meses')
-            }
+    idade = Number(String('0.' + idade))
+    return idade;
+  }
 */
 
   if (idade < -1 || ano < 1000) {
@@ -271,7 +265,6 @@ function som() {
   if (especie == "peixe") {
     alert(`Peixe não faz som! Tente Fazer Movimento (isso faz som)`);
   }
-
 }
 
 function mover() {
