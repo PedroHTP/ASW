@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: rgb(127, 127, 127);
 }
 
 header {
@@ -11,7 +12,7 @@ header {
 main {
     display: flex;
     background-color: rgb(127, 127, 127);
-    height: 630px;
+    height: auto;
 }
 
 .container_left {
