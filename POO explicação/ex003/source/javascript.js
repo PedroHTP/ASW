@@ -30,8 +30,8 @@ class Animal {
 
       case "filhote":
         img.src = "./images/" + this.getEspecie() + "-filhote.jpg";
-        let especie = this.getEspecie();
-        if (especie == "Peixe") {
+        
+        if (this.getEspecie() == "Peixe") {
           img.src = "./images/Peixe-filhote.png";
         }
         break;
@@ -149,20 +149,6 @@ function updateSteps() {
   }
 }
 
-function validarCampos(stepElement) {
-  // Seleciona inputs e selects da etapa atual
-  const campos = stepElement.querySelectorAll("input, select");
-  let valido = true;
-
-  campos.forEach((campo) => {
-    // Se o campo estiver vazio ou conter apenas espaços, marca como inválido
-    if (!campo.value || campo.value.trim() === "") {
-      valido = false;
-      // Pode-se adicionar uma classe de erro ou um aviso visual aqui, se desejar
-    }
-  });
-  return valido;
-}
 
 function continuar() {
   const etapaAtual = steps[atual_Step];
@@ -177,11 +163,26 @@ function continuar() {
   }
 }
 
+
 function voltar() {
   if (atual_Step > 0) {
     atual_Step--;
     updateSteps();
   }
+}
+
+function validarCampos(stepElement) {
+  // Seleciona inputs e selects da etapa atual
+  const campos = stepElement.querySelectorAll("input, select");
+  let valido = true;
+
+  campos.forEach((campo) => {
+    // Se o campo estiver vazio ou conter apenas espaços, marca como inválido
+    if (!campo.value || campo.value.trim() === "") {
+      valido = false;
+    }
+  });
+  return valido;
 }
 
 updateSteps();
@@ -232,9 +233,10 @@ function Calcular_idade(ano, mes, dia) {
   let idade = ano_atual - ano;
 
   // verifica se não fez aniversário
-  if (mes_atual < mes || (mes_atual == mes && dia_atual < dia)) {
+  if ((mes_atual < mes) || (mes_atual == mes && dia_atual < dia)) {
     idade -= 1;
   }
+
 /*
   if (idade == 0 || idade == -1) {
     if ((idade == -1)) {

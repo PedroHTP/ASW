@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema Interativo com POO</title>
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .step {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .animal-box {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-body">
+                <h2 class="text-center">Criando Seu Animal</h2>
+
+                <!-- Barra de Progresso -->
+                <div class="progress mb-4">
+                    <div id="progressBar" class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+
+                <!-- Passo 1: Escolher o Animal -->
+                <div class="step active" id="step1">
+                    <label for="tipoAnimal" class="form-label">Escolha um Animal:</label>
+                    <select id="tipoAnimal" class="form-select mb-3">
+                        <option value="cachorro">Cachorro</option>
+                        <option value="gato">Gato</option>
+                        <option value="passaro">Pássaro</option>
+                        <option value="peixe">Peixe</option>
+                        <option value="cavalo">Cavalo</option>
+                    </select>
+                    <button class="btn btn-primary w-100" onclick="nextStep(1)">Próximo</button>
+                </div>
+
+                <!-- Passo 2: Definir Nome e Cor -->
+                <div class="step" id="step2">
+                    <label for="nomeAnimal" class="form-label">Nome do Animal:</label>
+                    <input type="text" id="nomeAnimal" class="form-control mb-3" placeholder="Digite o nome">
+
+                    <label for="corAnimal" class="form-label">Escolha uma Cor:</label>
+                    <input type="color" id="corAnimal" class="form-control form-control-color mb-3">
+
+                    <button class="btn btn-primary w-100" onclick="nextStep(2)">Criar Animal</button>
+                </div>
+
+                <!-- Passo 3: Interação com o Animal -->
+                <div class="step" id="step3">
+                    <h3 id="animalInfo" class="text-center"></h3>
+                    <div class="animal-box border p-3 text-white" id="animalBox"></div>
+                    <button class="btn btn-success w-100 mt-3" onclick="fazerSom()">Fazer Som</button>
+                    <button class="btn btn-warning w-100 mt-2" onclick="moverAnimal()">Mover</button>
+                    <button class="btn btn-danger w-100 mt-2" onclick="resetForm()">Reiniciar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let animal;
+
+        function nextStep(step) {
+            console.log(`➡️ Avançando para step(${step + 1})`);
+            document.getElementById(`step${step}`).classList.remove("active");
+            document.getElementById(`step${step + 1}`).classList.add("active");
+
+            // Atualiza a barra de progresso
+            let progress = (step + 1) * 33;
+            document.getElementById("progressBar").style.width = `${progress}%`;
+
+            if (step === 2) {
+                let tipo = document.getElementById("tipoAnimal").value;
+                let nome = document.getElementById("nomeAnimal").value;
+                let cor = document.getElementById("corAnimal").value;
+
+                console.log(`🎨 Criando animal: Tipo: ${tipo}, Nome: ${nome}, Cor: ${cor}`);
+
+                switch (tipo) {
+                    case "cachorro": animal = new Cachorro(nome, cor); break;
+                    case "gato": animal = new Gato(nome, cor); break;
+                    case "passaro": animal = new Passaro(nome, cor); break;
+                    case "peixe": animal = new Peixe(nome, cor); break;
+                    case "cavalo": animal = new Cavalo(nome, cor); break;
+                }
+
+                document.getElementById("animalInfo").innerText = `Você criou um ${tipo} chamado ${nome}.`;
+                document.getElementById("animalBox").style.backgroundColor = cor;
+            }
+        }
+
+        function fazerSom() {
+            alert(animal.fazerSom());
+        }
+
+        function moverAnimal() {
+            alert(animal.mover());
+        }
+
+        function resetForm() {
+            document.getElementById("step3").classList.remove("active");
+            document.getElementById("step1").classList.add("active");
+            document.getElementById("progressBar").style.width = "33%";
+        }
+
+        class Animal {
+            constructor(nome, cor) { this.nome = nome; this.cor = cor; }
+            fazerSom() { return "Este animal faz um som."; }
+            mover() { return "Este animal se move."; }
+        }
+        class Cachorro extends Animal {
+            fazerSom() { return `O cachorro ${this.nome} late: Au Au!`; }
+            mover() { return `O cachorro ${this.nome} está correndo!`; }
+        }
+        class Gato extends Animal {
+            fazerSom() { return `O gato ${this.nome} mia: Miau!`; }
+            mover() { return `O gato ${this.nome} está saltando!`; }
+        }
+        class Passaro extends Animal {
+            fazerSom() { return `O pássaro ${this.nome} canta: Piu Piu!`; }
+            mover() { return `O pássaro ${this.nome} está voando!`; }
+        }
+        class Peixe extends Animal {
+            fazerSom() { return `O peixe ${this.nome} não faz som.`; }
+            mover() { return `O peixe ${this.nome} está nadando!`; }
+        }
+        class Cavalo extends Animal {
+            fazerSom() { return `O cavalo ${this.nome} relincha: Iiirrrrí!`; }
+            mover() { return `O cavalo ${this.nome} está galopando!`; }
+        }
+    </script>
+</body>
+
+</html>
